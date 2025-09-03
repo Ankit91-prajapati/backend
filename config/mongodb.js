@@ -8,12 +8,7 @@ const connectDB = async () => {
       throw new Error("❌ MONGODB_URI is missing in environment variables");
     }
 
-    await mongoose.connect(uri,
-                           //{
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-   // }
-                           );
+    await mongoose.connect(uri );
 
     mongoose.connection.on("connected", () => {
       console.log("✅ MongoDB connected");
