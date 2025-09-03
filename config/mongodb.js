@@ -5,8 +5,8 @@ const connectDB = async () => {
     await mongoose.connect(`${process.env.MONGODB_URI}/mern-auth`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      ssl: true,
-    });
+     
+    }, ssl= true,);
 
     mongoose.connection.on('connected', () => {
       console.log('✅ MongoDB connected');
