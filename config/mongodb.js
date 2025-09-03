@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 const connectDB = async () => {
   try {
     await mongoose.connect(`${process.env.MONGODB_URI}/mern-auth`, {
-      useNewUrlParser: true,
-      // useUnifiedTopology: true, ← remove this line
-      ssl=true
+    useNewUrlParser: true,
+  useUnifiedTopology: true,
+   ssl: true
     });
 
     mongoose.connection.on('connected', () => {
