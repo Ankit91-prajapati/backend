@@ -13,11 +13,18 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = ['https://frontend-seven-phi-73.vercel.app'];
+import cors from "cors";
+import express from "express";
+
+const app = express();
+
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
+  origin: "https://frontend-seven-phi-73.vercel.app", // allow your frontend domain
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true // allow cookies & auth headers
 }));
+
+
 
 app.get('/', (req, res) => {
   res.send("Backend API is running");
