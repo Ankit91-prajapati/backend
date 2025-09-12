@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 // 
 app.use(cors({
-  origin: "https://frontend-seven-phi-73.vercel.app", // frontend domain
+  origin:"https://frontend-kappa-seven-35.vercel.app", // frontend domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
