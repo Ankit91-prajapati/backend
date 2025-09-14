@@ -16,21 +16,16 @@ app.use(cookieParser());
 
 
 const allowedOrigins = [
-  "https://frontend-kappa-seven-35.vercel.app", // vercel frontend
-  "http://localhost:3000"                       // local dev
+  "https://frontend-kappa-seven-35.vercel.app",
+  "http://localhost:3000"
 ];
 
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  origin: allowedOrigins,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"]
 }));
+
 
 
 
