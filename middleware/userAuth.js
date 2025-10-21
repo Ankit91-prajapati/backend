@@ -7,7 +7,6 @@ const userAuth = (req, res, next) => {
     if (!token) {
       return res.status(401).json({
         success: false,
-        message: "No token provided.if you have already account Please log in.",
       });
     }
 

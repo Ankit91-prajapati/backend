@@ -6,10 +6,11 @@ import transporter from '../config/nodemailer.js';
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
   //check for password,email,name is not present
+  console.log(name)
   if (!name || !email || !password) {
     return res.status(400).json({ success: false, message:  "Missing required fields:name, email, password" });
     }
-
+  
   try {
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
